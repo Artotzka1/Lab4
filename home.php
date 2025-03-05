@@ -22,7 +22,14 @@ $file = $_FILES['file']['name'] ?? 'Файл не прикреплен';
         </div>
         <!-- Возврат к форме (рабочая версия) -->
         <form action="index.php" method="GET">
-            <button type="submit" class="button-return">Заполнить снова</button>
+            <input type="hidden" name="fullname" value="<?php echo htmlspecialchars($fullname); ?>">
+            <input type="hidden" name="email" value="<?php echo htmlspecialchars($email); ?>">
+            <input type="hidden" name="message" value="<?php echo htmlspecialchars($message); ?>">
+            <input type="hidden" name="type" value="<?php echo htmlspecialchars($type); ?>">
+            <input type="hidden" name="source" value="<?php echo htmlspecialchars($source); ?>">
+            <input type="hidden" name="agreement"
+                value="<?php echo isset($_POST['agreement']) || isset($_GET['agreement']) ? 'on' : ''; ?>">
+            <button type="submit">Заполнить повторно</button>
         </form>
     </div>
 </main>

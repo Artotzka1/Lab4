@@ -1,4 +1,13 @@
-<?php include 'header.html'; ?>
+<?php include 'header.html'; 
+
+$fullname = $_GET['fullname'] ?? '';
+$email = $_GET['email'] ?? '';
+$message = $_GET['message'] ?? '';
+$type = $_GET['type'] ?? '';
+$source = $_GET['source'] ?? '';
+$agreement = isset($_GET['agreement']) ? 'checked' : '';
+
+?>
 
 <main class="home">
     <div class="form-container">
